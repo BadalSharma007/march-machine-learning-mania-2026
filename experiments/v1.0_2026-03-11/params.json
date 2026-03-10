@@ -1,0 +1,117 @@
+{
+  "_version": "1.0",
+  "_run_date": "2026-03-11",
+  "_status": "pending_training",
+  "_description": "Best hyperparameters will be filled after training run v1.0",
+  
+  "cv": {
+    "strategy": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 42
+  },
+  
+  "training_data": {
+    "symmetric_rows": true,
+    "val_seasons": "last 2 seasons",
+    "feature_count": "TBD"
+  },
+  
+  "random_forest": {
+    "n_estimators": "TBD",
+    "max_depth": "TBD",
+    "min_samples_split": "TBD",
+    "min_samples_leaf": "TBD",
+    "max_features": "TBD",
+    "bootstrap": true,
+    "n_jobs": -1,
+    "optuna_trials": 30,
+    "oof_log_loss": "TBD"
+  },
+  
+  "xgboost": {
+    "n_estimators": "TBD",
+    "max_depth": "TBD",
+    "learning_rate": "TBD",
+    "subsample": "TBD",
+    "colsample_bytree": "TBD",
+    "reg_alpha": "TBD",
+    "reg_lambda": "TBD",
+    "gamma": "TBD",
+    "min_child_weight": "TBD",
+    "device": "cuda",
+    "tree_method": "gpu_hist",
+    "optuna_trials": 100,
+    "early_stopping_rounds": 50,
+    "oof_log_loss": "TBD"
+  },
+  
+  "catboost": {
+    "iterations": "TBD",
+    "depth": "TBD",
+    "learning_rate": "TBD",
+    "l2_leaf_reg": "TBD",
+    "border_count": "TBD",
+    "task_type": "GPU",
+    "optuna_trials": 50,
+    "early_stopping_rounds": 50,
+    "oof_log_loss": "TBD"
+  },
+  
+  "lightgbm": {
+    "n_estimators": "TBD",
+    "num_leaves": "TBD",
+    "learning_rate": "TBD",
+    "min_child_samples": "TBD",
+    "subsample": "TBD",
+    "colsample_bytree": "TBD",
+    "reg_alpha": "TBD",
+    "reg_lambda": "TBD",
+    "device": "gpu",
+    "optuna_trials": 100,
+    "early_stopping_rounds": 50,
+    "oof_log_loss": "TBD"
+  },
+  
+  "pytorch_nn": {
+    "architecture": "Residual-512-256-128-64",
+    "activation": "SiLU",
+    "batch_norm": true,
+    "dropout": 0.3,
+    "optimizer": "AdamW",
+    "scheduler": "OneCycleLR",
+    "max_epochs": 200,
+    "early_stopping_patience": 15,
+    "batch_size": "TBD",
+    "learning_rate": "TBD",
+    "weight_decay": "TBD",
+    "oof_log_loss": "TBD"
+  },
+  
+  "ensemble": {
+    "method": "TBD (stacking/weight_opt/rank_avg)",
+    "meta_learner": "LogisticRegression",
+    "weights": {
+      "random_forest": "TBD",
+      "xgboost": "TBD",
+      "catboost": "TBD",
+      "lightgbm": "TBD",
+      "pytorch_nn": "TBD"
+    },
+    "oof_log_loss": "TBD"
+  },
+  
+  "calibration": {
+    "method": "TBD (isotonic/platt)",
+    "clip_min": 0.025,
+    "clip_max": 0.975,
+    "pre_calibration_log_loss": "TBD",
+    "post_calibration_log_loss": "TBD"
+  },
+  
+  "scores": {
+    "cv_oof_log_loss": "TBD",
+    "public_lb_log_loss": "TBD",
+    "private_lb_log_loss": "TBD"
+  }
+}

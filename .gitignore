@@ -1,0 +1,43 @@
+# Data files (too large / not to be committed)
+data/*.csv
+data/*.zip
+data/*.parquet
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyc
+.Python
+*.egg-info/
+dist/
+build/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Virtual environments
+venv/
+.env/
+.venv/
+env/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Model artifacts (large binaries)
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.pth
+catboost_info/
+
+# Submission CSVs (can be regenerated)
+submission*.csv
+
+# Logs
+*.log
